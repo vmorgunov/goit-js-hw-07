@@ -13,11 +13,10 @@ const images = [
   },
 ];
 
-const ulList = document.getElementById('gallery');
+const galleryRef = document.getElementById('gallery');
 
-images.forEach(image => {
-  ulList.insertAdjacentHTML(
-    'afterbegin',
-    `<li><img src=${image.url} alt="${image.alt}" width="600"</li>`,
-  );
+const addImages = images.map(({ url, alt }) => {
+  return `<li><img src=${url} alt="${alt}" width="450"</li>`;
 });
+
+galleryRef.insertAdjacentHTML('afterbegin', addImages.join(''));
