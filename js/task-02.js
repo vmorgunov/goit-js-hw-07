@@ -6,11 +6,11 @@ const ingredients = [
   'Зелень',
   'Приправы',
 ];
-
+const ingredientRef = document.querySelector('#ingredients');
 const addIngredient = ingredients.map(ingredient => {
-  const ingredientRef = document.querySelector('#ingredients');
   const itemRef = document.createElement('li');
   itemRef.textContent = ingredient;
-
-  ingredientRef.append(itemRef);
+  return itemRef;
 });
+
+ingredientRef.append(...addIngredient);
