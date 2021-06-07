@@ -12,9 +12,9 @@ function createBoxes(amount) {
     const div = document.createElement('div');
     let divSize = 30 + i * 10;
     div.style.cssText = `width: ${divSize}px; height: ${divSize}px; background-color: rgba( ${randomizer()} , ${randomizer()} , ${randomizer()} ) `;
-    fragmentRef.append(div);
+    fragmentRef.appendChild(div);
   }
-  divRef.append(fragmentRef);
+  divRef.appendChild(fragmentRef);
 }
 
 function destroyBoxes() {
