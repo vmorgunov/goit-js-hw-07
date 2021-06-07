@@ -6,13 +6,14 @@ function onInput(e) {
   const currentLength = e.currentTarget.value.length;
   const dataLength = Number(inputRef.dataset.length);
 
-  if (currentLength === dataLength) {
-    e.currentTarget.classList.add('valid');
-    e.currentTarget.classList.remove('invalid');
+  function updateClass(addClass, remClass) {
+    e.currentTarget.classList.remove(remClass);
+    e.currentTarget.classList.add(addClass);
   }
 
-  if (currentLength !== dataLength) {
-    e.currentTarget.classList.remove('valid');
-    e.currentTarget.classList.add('invalid');
+  if (currentLength === dataLength) {
+    updateClass('valid', 'invalid');
+  } else {
+    updateClass('invalid', 'valid');
   }
 }
